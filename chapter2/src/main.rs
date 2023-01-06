@@ -7,9 +7,13 @@ fn main() {
 
     println!("input your guess");
 
+    // let 으로 변수 선언
+    // rust는 기본이 immutable로 상수임.
     let mut guess = String::new();
 
-    io::stdin().read_line(&mut guess).expect("Fail 2 read line");
+    io::stdin()
+    .read_line(&mut guess)
+    .expect("Fail 2 read line");
 
     println!("you guess : {guess}");
 
