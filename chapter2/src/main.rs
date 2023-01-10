@@ -20,11 +20,14 @@ fn main() {
         // rust는 기본이 immutable로 상수임.
         let mut guess = String::new();
 
+        // 실패 시 나올거 적어 놔야 함
         io::stdin()
         .read_line(&mut guess)
         .expect("Fail 2 read line");
 
         // parse의 결과를 match를 통해 컨트롤
+        // parse 는 숫자 바꾸기  : u32 라는 타입으로 바꿈
+        // trim은 앞 뒤 공백관련 문자들 제거
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
